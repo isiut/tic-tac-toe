@@ -59,17 +59,16 @@ int handleInput(int player)
 
     int input;
     printf("%c: ", playerUses);
-    scanf(" %d", &input);
 
-    if (board[input] != 0)
+    while (scanf(" %d", &input) != 1 || input < 0 || input > 8 || board[input] != 0)
     {
-        printf("That square is taken\n");
-        return -1;
+        printf("That square is taken or the input is incorrect; please try again.\n");
+        printf("%c: ", playerUses);
+        // clear input buffer to prevent an infinite loop
+        while(getchar() != '\n');
     }
-    else
-    {
-        player == 1 ? board[input]++ : board[input]--;
-    }
+
+    board[input] = player;
 
     return 0;
 }
@@ -133,7 +132,7 @@ int main(void)
         if (printBoard(board) == -1)
         {
             printf("Invalid input\n");
-            return -1;
+            handleInput(1);
         }
         if (checkWin() != 0)
         {
