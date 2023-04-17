@@ -19,21 +19,19 @@ int printBoard(int board[9])
 
     for (int i = 0; i <= 8; i++)
     {
-        if (board[i] == 0)
+        switch (board[i])
         {
-            drawnBoard[i] = '-';
-        }
-        else if (board[i] == 1)
-        {
-            drawnBoard[i] = 'x';
-        }
-        else if (board[i] == -1)
-        {
-            drawnBoard[i] = 'o';
-        }
-        else
-        {
-            return -1;
+            case 0:
+                drawnBoard[i] = '-';
+                break;
+            case 1:
+                drawnBoard[i] = 'x';
+                break;
+            case -1:
+                drawnBoard[i] = 'o';
+                break;
+            default:
+                return -1;
         }
     }
 
@@ -129,11 +127,6 @@ int main(void)
     {
         handleInput(1);
         printBoard(board);
-        if (printBoard(board) == -1)
-        {
-            printf("Invalid input\n");
-            handleInput(1);
-        }
         if (checkWin() != 0)
         {
             break;
@@ -141,11 +134,6 @@ int main(void)
 
         handleInput(-1);
         printBoard(board);
-        if (printBoard(board) == -1)
-        {
-            printf("Invalid input\n");
-            return -1;
-        }
         if (checkWin() != 0)
         {
             break;
