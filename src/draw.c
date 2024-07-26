@@ -7,13 +7,13 @@ void draw_tutorial_board(void)
     printf("Input a number 0-8 to mark that square: \n");
 
     printf("      |     |     \n");
-    printf("   0  |  1  |  2  \n");
+    printf("   1  |  2  |  3  \n");
     printf(" _____|_____|_____\n");
     printf("      |     |     \n");
-    printf("   3  |  4  |  5  \n");
+    printf("   4  |  5  |  6  \n");
     printf(" _____|_____|_____\n");
     printf("      |     |     \n");
-    printf("   6  |  7  |  8  \n");
+    printf("   7  |  8  |  9  \n");
     printf("      |     |     \n");
 }
 

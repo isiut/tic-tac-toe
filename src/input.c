@@ -8,7 +8,8 @@ Selection handle_input(int player, int board_positions[9])
     int input;
     printf("%c: ", player_uses);
 
-    while (scanf(" %d", &input) != 1 || input < 0 || input > 8 || board_positions[input] != 0)
+    // Input goes from 1-9 while the array goes from 0-8
+    while (scanf(" %d", &input) != 1 || input < 1 || input > 9 || board_positions[input - 1] != 0)
     {
         printf("That square is taken or the input is incorrect; please try again.\n");
         printf("%c: ", player_uses);
@@ -20,6 +21,6 @@ Selection handle_input(int player, int board_positions[9])
 
     Selection selection;
     selection.player = player;
-    selection.position = input;
+    selection.position = input - 1;
     return selection;
 }
