@@ -1,7 +1,2 @@
-# Files without extensions (to ignore executables)
-*
-!*.*
-!*/
-
-# VS Code
+/bin
 .vscode/
