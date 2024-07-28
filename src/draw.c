@@ -4,7 +4,7 @@
 void draw_tutorial_board(void)
 {
     printf("--Tic-Tac-Toe--\n");
-    printf("Input a number 0-8 to mark that square: \n");
+    printf("Input a number 1-9 to mark that square: \n");
 
     printf("      |     |     \n");
     printf("   1  |  2  |  3  \n");
