@@ -7,6 +7,6 @@ typedef struct
     int position;
 } Selection;
 
-Selection handle_input(int player, int board_positions[9]);
+Selection handle_input(int player, int *board_positions);
 
 #endif

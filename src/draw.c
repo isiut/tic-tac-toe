@@ -17,7 +17,7 @@ void draw_tutorial_board(void)
     printf("      |     |     \n");
 }
 
-void draw_board(int board_positions[9])
+void draw_board(int *board_positions)
 {
     char board[9];
 

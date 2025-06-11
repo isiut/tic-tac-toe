@@ -1,7 +1,7 @@
 #include "input.h"
 #include <stdio.h>
 
-Selection handle_input(int player, int board_positions[9])
+Selection handle_input(int player, int *board_positions)
 {
     char player_uses = player == 1 ? 'x' : 'o';
 

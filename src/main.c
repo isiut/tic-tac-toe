@@ -5,10 +5,12 @@
 
 int board[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-int process_selection(int player, int board_positions[9])
+int process_selection(int player, int *board_positions)
 {
     Selection selection = handle_input(player, board_positions);
     board[selection.position] = selection.player;
+
+    return 0;
 }
 
 int main(void)
@@ -19,7 +21,8 @@ int main(void)
     while (winner == 0)
     {
         // Process input for X
-        process_selection(1, board);
+        if (process_selection(1, board) != 0)
+            return 1;
 
         draw_board(board);
         if (check_win(board) != 0)
@@ -28,7 +31,9 @@ int main(void)
         }
 
         // Process input for O
-        process_selection(-1, board);
+        if (process_selection(-1, board) != 0)
+            return 1;
+
         draw_board(board);
         if (check_win(board) != 0)
         {
